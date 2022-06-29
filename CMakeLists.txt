@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(relf VERSION 0.1)
+project(elf_parser VERSION 0.1.0)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -18,13 +18,10 @@ if(OPTIMIZATIONS)
     endif()
 endif()
 
+include_directories(include)
 
-set(PROJECT_SOURCES
-
-        ExampleElf64Parser/main.c
-
-	src/include/relf.c
-	src/include/relf.h
-
+set(EELF64PARSER_SOURCES
+    ExampleElf64Parser/main.c
+	src/elfparser.c
 )
-add_executable(relf ${PROJECT_SOURCES} )
+add_executable(elf_parser ${EELF64PARSER_SOURCES})
